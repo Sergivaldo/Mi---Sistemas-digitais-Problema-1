@@ -1,4 +1,4 @@
-
+<a id="inicio"></a>
 ## Mi Sistemas digitais - Problema 1
 
 Este documento mostra os detalhes de implementação de um
@@ -79,6 +79,40 @@ Independente do sistema estar pausado ou contando, quando pressionado o botão d
 
 Abaixo algumas imagens e vídeos dos dos estados descritos anteriormente:
 
+
+
+<IMAGENS E VÍDEOS AQUI>
+
+
+
+<a id="secao6"></a>
+## Limitações da solução desenvolvida
+
+#### Número máximo de 4 dígitos
+
+A solução utilizada é interessante por um lado, pois não salva o número em si no registrador e sim os seus dígitos, cada um em um registrador.
+Isso faz com que se houver registradores disponíveis, pode-se utilizar de números com mais dígitos. Visto que a base utilizado é a decimal, um dígito nunca 
+passará de nove como número máximo, fazendo com que nunca seja ultrapassado o valor suportado pelo registrador (um número de 8 bits, se tratando de valores imediatos).
+
+Por depender de registradores disponíveis para acrescentar mais dígitos a um número, essa solução acaba ficando limitada, já que a quantidade de registradores disponíveis é finita. Além disso, a complexidade e tamanho do código vai aumentando a cada dígito adicionado já que é necessário o uso de branchs para verificar se todos os dígitos chegaram a zero para parar o temporizador. 
+
+Uma possível solução ao problema do limite de registradores seria a utilização da pilha de memória para salvar o valor de cada dígito, mas ainda assim, o problema de complexidade e tamanho do código irá persistir.
+
+#### Ação dos botões só funciona após 1 segundo
+
+Para que o temporizador decremente seu valor a cada 1 segundo foi utilizada chamada de sistema NanoSleep para fazer com que o processador durma, causando um delay de 1 segundo após a subtração do valor e atualização da informação no display. A solução funciona bem se tratando da exibição a cada segundo do novo valor no display, no entanto o uso do NanoSleep compromete o funcionamento dos botões, pois naquele segundo em que o processador está dormindo esses periféricos ficam inutilizaveis.
+
+Com o uso de interrupções esse problema pode ser resolvido, fazendo com que o chamada de sistema seja interrompida e a função do sistema seja executada.
+
+#### Se mantidos pressionados, os botões ficam sempre mudando o estado do programa
+
+A verificação do sinal dos botões é feita com o registrador de nível dos pinos GPIO, então se o valor do bit responsável pelo botão no registrador é 0 (o botão manda nivel baixo ao ser pressionado) e então o programa é mudado para outro estado (contando, pausado ou inicio). O problema acontece quando o botão é mantido pressionado, como o nível do botão atende a condição de verificação a mudança de estado ocorre sem parar. Por exemplo, se o temporizador está contando e o botão de pause é pressionado e mantido esses dois estados ficarão sempre alternando. O vídeo abaixo mostra essa situação acontecendo:
+
+
+<VÍDEO AQUI>
+
+
+<a id="secao7"></a>
 ## Materiais utilizados no desenvolvimento
 
 &nbsp;&nbsp;&nbsp;[BCM2835 ARM Peripherals](https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf)
@@ -94,3 +128,8 @@ Abaixo algumas imagens e vídeos dos dos estados descritos anteriormente:
 ](https://link.springer.com/book/10.1007/978-1-4842-5287-1)
 
 &nbsp;&nbsp;&nbsp;[GNU Assembler Directives](https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1/html_chapter/as_7.html)
+
+<hr/>
+
+#### ⬆️ [Voltar ao topo](#inicio)
+
