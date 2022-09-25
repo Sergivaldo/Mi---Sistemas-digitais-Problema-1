@@ -71,7 +71,7 @@ Junto com os dígitos do temporizador é imprimida a mensagem "Contando".
 
 #### Pause
 
-Um segundo após o botão de pausar ser pressionado o programa para a contagem, a mensagem "pausado" é exibida no display e a aplicação entra em um loop até que o botão de início seja pressionado ou o de reinício da contagem. Se o botão for 
+Um segundo após o botão de pausar ser pressionado o programa para a contagem, a mensagem "pausado" é exibida no display e a aplicação entra em um loop até que o botão de início seja pressionado ou o de reinício da contagem.
 
 #### Reinicio da contagem
 
