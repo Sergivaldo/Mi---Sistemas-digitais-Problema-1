@@ -1,5 +1,5 @@
 
-## Sistemas digitais - Problema 1
+## Mi Sistemas digitais - Problema 1
 
 Este documento mostra os detalhes de implementação de um
 temporizador feito em linguagem assembly na arquitetura
@@ -50,9 +50,25 @@ que a aplicação possa ser iniciada.
 #### Passo 3: Iniciando Temporizador
 Para iniciar o programa, use a seguinte instrução no terminal:
 
-&nbsp;&nbsp;&nbsp;`sudo ./nome_executável`
+&nbsp;&nbsp;&nbsp;`sudo ./main`
 
+
+## Testes realizados 
+
+Nos testes realizados pode-se notar que os resultados obtidos
+cumprem os requisitos solicitados, mas com algumas ressalvas que 
+são melhor detalhadas na sessão de [limitações do projeto](#secao6).
+
+Abaixo são mostradas fotos e gif de como a aplicação funciona:
+
+#### Estado inicial
+
+<img width="400px" src="https://user-images.githubusercontent.com/72475500/192157443-0eba7ff8-e8bd-485c-8ba7-e25cd24547cc.jpg"/>
+ 
+#### Estado de pause
+<img width="400px" src="https://user-images.githubusercontent.com/72475500/192157405-e2c8c366-1233-4c34-a41a-84f27633c3fa.jpg"/>
 <a id="secao7"></a>
+
 ## Materiais utilizados no desenvolvimento
 
 &nbsp;&nbsp;&nbsp;[BCM2835 ARM Peripherals](https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf)
