@@ -11,7 +11,7 @@ de botões, como:
 
 - Iniciar contagem;
 - Pausar contagem;
-- Reiniciar contagem a partir do tempo definido.
+- Reiniciar contagem para o tempo inicial definido.
 
 ## Seções 
 
