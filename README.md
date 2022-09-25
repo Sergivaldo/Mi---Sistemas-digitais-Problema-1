@@ -64,13 +64,20 @@ são melhor detalhadas na sessão de [limitações do projeto](#secao6).
 No estado inicial do programa, a mensagem "Aperte o botão" é exibida no display lcd e a aplicação entra em um loop até que seja feito 
 uma interação com o botão responsável pelo início da contagem.
 
-#### Estado de pause
+##### Contagem do temporizador
+Nesse estado o temporizador é decrementado em um a cada 1 segundo, começando do valor que foi declarado como primário, dentro de uma faixa de números de 0 a 9999.
+Junto com os dígitos do temporizador é imprimida a mensagem "Contando".
+
+#### Pause
 
 Um segundo após o botão de pausar ser pressionado o programa para a contagem, a mensagem "pausado" é exibida no display e a aplicação entra em um loop até que o botão de início seja pressionado ou o de reinício da contagem. Se o botão for 
 
 #### Reinicio da contagem
 
-Independente do sistema estar pausado ou contando, quando pressionado o botão de reinício o programa volta para o estado inicial e o temporizador volta para o tempo inicial que foi definido. Pode-se notar que quando pressionado e mantido segurado, esse processo é repetido sempre a cada um segundo, mesmo o sistema já tendo sido reiniciado.
+Independente do sistema estar pausado ou contando, quando pressionado o botão de reinício o programa volta para o estado inicial e o temporizador volta para o tempo de início que foi definido. Pode-se notar que quando pressionado e mantido segurado, esse processo é repetido sempre a cada um segundo, mesmo o sistema já tendo sido reiniciado.
+
+Abaixo algumas imagens e vídeos dos dos estados descritos anteriormente:
+
 
 
 ## Materiais utilizados no desenvolvimento
