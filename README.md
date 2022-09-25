@@ -27,10 +27,7 @@ de botões, como:
 
 &nbsp;&nbsp;&nbsp;[**6.** Limitações da solução desenvolvida](#secao6)
 
-
-
-
-
+&nbsp;&nbsp;&nbsp;[**7.** Referências](#secao7)
 
 <a id="secao3"></a>
 ## Configuração e instalação do projeto
@@ -54,6 +51,8 @@ que a aplicação possa ser iniciada.
 Para iniciar o programa, use a seguinte instrução no terminal:
 
 &nbsp;&nbsp;&nbsp;`sudo ./nome_executável`
+
+<a id="secao7"></a>
 ## Materiais utilizados no desenvolvimento
 
 &nbsp;&nbsp;&nbsp;[BCM2835 ARM Peripherals](https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf)
