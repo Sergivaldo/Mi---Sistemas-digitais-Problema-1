@@ -52,6 +52,7 @@ Para iniciar o programa, use a seguinte instrução no terminal:
 
 &nbsp;&nbsp;&nbsp;`sudo ./main`
 
+<a id="secao5"></a>
 
 ## Testes realizados 
 
@@ -77,8 +78,6 @@ Um segundo após o botão de pausar ser pressionado o programa para a contagem, 
 Independente do sistema estar pausado ou contando, quando pressionado o botão de reinício o programa volta para o estado inicial e o temporizador volta para o tempo de início que foi definido. Pode-se notar que quando pressionado e mantido segurado, esse processo é repetido sempre a cada um segundo, mesmo o sistema já tendo sido reiniciado.
 
 Abaixo algumas imagens e vídeos dos dos estados descritos anteriormente:
-
-
 
 ## Materiais utilizados no desenvolvimento
 
