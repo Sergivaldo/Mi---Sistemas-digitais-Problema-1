@@ -13,8 +13,7 @@ de botões, como:
 - Pausar contagem;
 - Reiniciar contagem a partir do tempo definido.
 
-Cada seção detalha os passos que foram feitos para chegar
-até a solução encontrada, desde: 
+## Seções 
 
 &nbsp;&nbsp;&nbsp;[**1.** Softwares utilizados](#secao1)
 
