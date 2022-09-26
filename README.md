@@ -29,6 +29,38 @@ de botões, como:
 
 &nbsp;&nbsp;&nbsp;[**7.** Materiais utilizados no desenvolvimento](#secao7)
 
+<a id="secao1"></a>
+## Ferramentas utilizadas
+
+Para o processo de desenvolvimento do sistema foram utilizadas as seguintes ferramentas:
+
+**GNU Makefile**: O makefile determina automaticamente quais partes de um programa grande precisam ser recompiladas e emite comandos para compilar novamente. Inicialmente deve ser escrito um arquivo chamado makefile que descreve os relacionamentos entre os arquivos do programa e fornece comandos para atualizar cada arquivo. Em um programa, normalmente, o arquivo executável é atualizado a partir de arquivos de objeto, que por sua vez são feitos pela compilação de arquivos de origem
+Uma vez que existe um makefile adequado, cada vez que alguns arquivos de origem são alterados, apenas o comando “make” é suficiente para realizar todas as recompilações necessárias.
+
+**GNU Binutils**:
+
+**GDB**: É o depurador de nível de fonte GNU que é padrão em sistemas linux (e muitos outros unix). O propósito de um depurador como o GDB é permitir ver o que está acontecendo “dentro” de outro programa enquanto ele é executado, ou o que outro programa estava fazendo no momento em que travou. Ele pode ser usado tanto para programas escritos em linguagens de alto nível como C e C++ quanto para programas de código assembly.
+
+**QEMU**: 
+
+
+<a id="secao2"></a>
+## Informações do computador usado para os testes
+
+O computador utilizado para os testes foi a Raspberry PI Zero W. Esse dispositivo conta com arquitetura arm que foi utilizada para a 
+construção do código assembly.
+
+Características da Raspberry PI Zero W utilizada:
+
+- Chip Broadcom BCM2835, com processador ARM1176JZF-S 1GHz single core;
+- O processador conta com arquitetura ARMv6.
+- 512MB de memória LPDDR2 SDRAM;
+
+
+Além da Raspberry PI Zero W, alguns periféricos foram utilizados para o desenvolvimento do sistema, são eles:
+- Display LCD: HD44780U (LCD-II);
+- Botão tipo push-button.
+
 <a id="secao3"></a>
 ## Configuração e instalação do projeto
 
@@ -65,7 +97,7 @@ são melhor detalhadas na sessão de [limitações do projeto](#secao6).
 No estado inicial do programa, a mensagem "Aperte o botão" é exibida no display lcd e a aplicação entra em um loop até que seja feito 
 uma interação com o botão responsável pelo início da contagem.
 
-##### Contagem do temporizador
+#### Contagem do temporizador
 Nesse estado o temporizador é decrementado em um a cada 1 segundo, começando do valor que foi declarado como primário, dentro de uma faixa de números de 0 a 9999.
 Junto com os dígitos do temporizador é imprimida a mensagem "Contando".
 
