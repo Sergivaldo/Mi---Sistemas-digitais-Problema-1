@@ -5,7 +5,7 @@ Este documento mostra os detalhes de implementação de um
 temporizador feito em linguagem assembly na arquitetura
 ARMv6. 
 
-O projeto consiste timer que é exibido em um display 
+O projeto consiste em um timer que é exibido em um display 
 LCD 16x2 e possui  funcionalidades de controle a partir
 de botões, como:
 
