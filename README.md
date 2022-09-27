@@ -84,6 +84,18 @@ Para iniciar o programa, use a seguinte instrução no terminal:
 
 &nbsp;&nbsp;&nbsp;`sudo ./main`
 
+<a id="secao4"></a>
+## Instruções utilizadas
+Para o desenvolvimento da aplicação foram utilizadas de diversas instruções assembly, desde instruções aritméticas, lógicas, movimentação de dados, entre outras que serão mostradas. A maioria das instruções seguem o seguinte formato: `op{cond}{S} Rd, Rn, Operand2`, algumas se diferenciam em relação a quantidade de operandos ou por não guardar resultados em um registrador. De forma mais detalhada, as instruções contam com os seguintes elementos:
+- `op`- Mnemonico da operação a ser feita.
+- `{cond}` - Condição opcional para execução da instrução.
+- `{S}` - Sufixo opcional para atualizar as flags de condição de acordo com o resultado da operação.
+- `Rd` - Registrador destino onde o resultado de uma operação é salvo.
+- `Rn` - Registrador que contém o primeiro operando.
+- `Operand2` - É o segundo operando, sendo esse flexível. Logo, pode ser utilizado neste operando um valor imediato ou um registrador.
+
+Abaixo segue a tabela com as instruções que foram utilizadas no código assembly do programa:
+
 <a id="secao5"></a>
 
 ## Testes realizados 
