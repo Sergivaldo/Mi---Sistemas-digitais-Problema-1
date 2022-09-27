@@ -86,7 +86,7 @@ Para iniciar o programa, use a seguinte instrução no terminal:
 
 <a id="secao4"></a>
 ## Instruções utilizadas
-Para o desenvolvimento da aplicação foram utilizadas de diversas instruções assembly, desde instruções aritméticas, lógicas, movimentação de dados, entre outras que serão mostradas. A maioria das instruções seguem o seguinte formato: `op{cond}{S} Rd, Rn, Operand2`, algumas se diferenciam em relação a quantidade de operandos ou por não guardar resultados em um registrador. De forma mais detalhada, as instruções contam com os seguintes elementos:
+Para o desenvolvimento da aplicação foram utilizadas de diversas instruções assembly, desde instruções aritméticas, lógicas, movimentação de dados, entre outras que serão mostradas. As instruções seguem o seguinte formato: `op{cond}{S} Rd, Rn, Operand2`, algumas se diferenciam em relação a quantidade de operandos ou por não guardar resultados em um registrador. De forma mais detalhada, as instruções podem conter os seguintes elementos:
 - `op`- Mnemonico da operação a ser feita.
 - `{cond}` - Condição opcional para execução da instrução.
 - `{S}` - Sufixo opcional para atualizar as flags de condição de acordo com o resultado da operação.
