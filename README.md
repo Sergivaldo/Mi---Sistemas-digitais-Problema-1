@@ -190,6 +190,7 @@ A verificação do sinal dos botões é feita com o registrador de nível dos pi
 
 [bug pause](https://user-images.githubusercontent.com/72475500/192684619-63dab28a-c984-401f-997c-864f2cd98c06.mp4)
 
+Uma possível solução para isso seria em vez de verificar o nível do pino, verificar se ocorreu uma transição de borda de subida ou descida, dessa forma o estado do programa só irá mudar em um determminada situação e não sempre.
 
 <a id="secao7"></a>
 ## Materiais utilizados no desenvolvimento
