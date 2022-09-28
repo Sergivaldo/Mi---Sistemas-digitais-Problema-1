@@ -1,6 +1,8 @@
 .equ setregoffset, 28 @ Offset do registrador de definição
 .equ clrregoffset, 40 @ Offset do registrador de limpeza
 
+
+@ Mapeia o endereço de memória virtual
 .macro memory_map
     LDR R0, =fileName     @ R0 = nome do arquivo
     MOV R1, #0x1b0        @ Move um hexadecimal para R1
@@ -21,6 +23,7 @@
     MOV R8, R0                         @ Move o ponteiro do endereço de memoria mapeado para o R8                     
 .endm
 
+@ Define a direção do pino como saída
 .macro GPIODirectionOut pin
         LDR R2,=\pin         @ Carrega o endereço do mapeamento do pino em R2
         LDR R2, [R2]         @ Carrega o valor do mapeamento do pino com offset igual a 0 em R2
@@ -38,8 +41,8 @@
 .endm
 
 @ A branch GPIOTurn passa o valor 0 ou 1 para um pino o ativando ou limpando.
-@ R1 - Valor (1 = ativar, 0 = limpar)
-@ R3 - Pino (Pino que será setado)
+@ value - Valor (1 = ativar, 0 = limpar)
+@ pin - Pino (Pino que será setado)
 
 .macro GPIOTurn pin, value
         MOV R1, \value
