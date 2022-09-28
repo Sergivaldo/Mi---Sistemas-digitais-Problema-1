@@ -37,11 +37,11 @@ Para o processo de desenvolvimento do sistema foram utilizadas as seguintes ferr
 **GNU Makefile**: O makefile determina automaticamente quais partes de um programa grande precisam ser recompiladas e emite comandos para compilar novamente. Inicialmente deve ser escrito um arquivo chamado makefile que descreve os relacionamentos entre os arquivos do programa e fornece comandos para atualizar cada arquivo. Em um programa, normalmente, o arquivo executável é atualizado a partir de arquivos de objeto, que por sua vez são feitos pela compilação de arquivos de origem
 Uma vez que existe um makefile adequado, cada vez que alguns arquivos de origem são alterados, apenas o comando “make” é suficiente para realizar todas as recompilações necessárias.
 
-**GNU Binutils**:
+**GNU Binutils**: O ***Binutils*** é uma coleção de ferramentas binárias. Neste software se encontra o GNU assembler (as) que foi utilizado para montar os códigos assembly, além do  GNU linker(ld) que combina vários arquivos objetos, realoca seus dados e vincula referências de símbolos, fazendo por último a criação do executável do programa.
 
 **GDB**: É o depurador de nível de fonte GNU que é padrão em sistemas linux (e muitos outros unix). O propósito de um depurador como o GDB é permitir ver o que está acontecendo “dentro” de outro programa enquanto ele é executado, ou o que outro programa estava fazendo no momento em que travou. Ele pode ser usado tanto para programas escritos em linguagens de alto nível como C e C++ quanto para programas de código assembly.
 
-**QEMU**: 
+**QEMU** e **CPUlator**: O ***QEMU*** implementa um emulador de processador, permitindo uma virtualização completa de um sistema PC dentro de outro. O ***CPUlator*** também é um emulador online de processador que conta ainda com a simulação de alguns periféricos como leds, botões e dip switches. Os dois foram utilizados para simular a arquitetura ARM. No primeiro foi utilizado uma simulação do ARMv6, a mesma arquitetura da máquina utilizada, o que ajudou bastante em pequenos códigos que não necessitavam da utilização das GPIOs. O segundo emula o ARMv7, apesar de ser uma arquitetura diferente da utilizada nos testes, foi bem útil para práticar o uso da linguagem.
 
 
 <a id="secao2"></a>
@@ -86,26 +86,46 @@ Para iniciar o programa, use a seguinte instrução no terminal:
 
 <a id="secao4"></a>
 ## Instruções utilizadas
-Para o desenvolvimento da aplicação foram utilizadas de diversas instruções assembly, desde instruções aritméticas, lógicas, movimentação de dados, entre outras que serão mostradas. As instruções seguem o seguinte formato: `op{cond}{S} Rd, Rn, Operand2`, algumas se diferenciam em relação a quantidade de operandos ou por não guardar resultados em um registrador. De forma mais detalhada, as instruções podem conter os seguintes elementos:
+Para o desenvolvimento da aplicação foram utilizadas de diversas instruções assembly, desde instruções aritméticas, lógicas, movimentação de dados, entre outras que serão mostradas. As instruções seguem um formato, por exemplo, as instruções de operação são escritas da assim: `op{cond}{S} Rd, Rn, Operand2`, algumas se diferenciam em relação a quantidade de operandos ou por não guardar resultados em um registrador entre outras coisas. De forma mais detalhada, as instruções podem conter os seguintes elementos:
 - `op`- Mnemonico da operação a ser feita.
 - `{cond}` - Condição opcional para execução da instrução.
 - `{S}` - Sufixo opcional para atualizar as flags de condição de acordo com o resultado da operação.
 - `Rd` - Registrador destino onde o resultado de uma operação é salvo.
 - `Rn` - Registrador que contém o primeiro operando.
+- `Rm` - É um registrador ARM contendo o endereço de para onde fazer o desvio.
 - `Operand2` - É o segundo operando, sendo esse flexível. Logo, pode ser utilizado neste operando um valor imediato ou um registrador.
+- `label` - É um rótulo referente a um trecho de código.
 
 Abaixo segue a tabela com as instruções que foram utilizadas no código assembly do programa:
 
-| Instrução 	|                                                 Descrição                                                	|
-|:---------:	|:--------------------------------------------------------------------------------------------------------:	|
-|   `MOV`   	| Move o valor do operando para o registrador destino. Podendo ser um valor imediato ou de um registrador. 	|
-|   `ADD`   	|                Soma o valor dos operandos e armazena o resultado  no registrador destino.                	|
-|   `SUB`   	|    Subtrai do primeiro operando o valor do operando 2 e  armazena o resultado no registrador destino.    	|
-|   `AND`   	|       Faz uma operação and bit a bit nos operandos e  armazena o resultado no registrador destino.       	|
-|   `ORR`   	|        Faz uma operação or bit a bit nos operandos e  armazena o resultado no registrador destino.       	|
-|   `CMP`   	|                    Compara o valor no registrador do primeiro operando  com Operando2                    	|
-|   `LDR`   	|                                Carrega dados da memória em um registrador                                	|
-|   `STR`   	|                               Armazena o dado de um registrador na memória                               	|
+|      Instrução     	|                                                                             Descrição                                                                             	|
+|:------------------:	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+|        `MOV`       	|                              Move o valor do operando para o registrador destino. Podendo ser um valor imediato ou de um registrador.                             	|
+|        `ADD`       	|                                             Soma o valor dos operandos e armazena o resultado  no registrador destino.                                            	|
+|        `SUB`       	|                                 Subtrai do primeiro operando o valor do operando 2 e  armazena o resultado no registrador destino.                                	|
+|        `AND`       	|                                    Faz uma operação and bit a bit nos operandos e  armazena o resultado no registrador destino.                                   	|
+|        `ORR`       	|                                    Faz uma operação or bit a bit nos operandos e  armazena o resultado no registrador destino.                                    	|
+|        `CMP`       	|                                                Compara o valor no registrador do primeiro operando  com Operando2.                                                	|
+|        `LDR`       	|                                                            Carrega dados da memória em um registrador.                                                            	|
+|        `STR`       	|                                                           Armazena o dado de um registrador na memória.                                                           	|
+|        `SWI`       	|                                    Faz uma interrupção de software. Foi utilizado  para fazer chamadas ao sistema operacional.                                    	|
+|        `LSL`       	| Faz um deslocamento lógico à esquerda. O LSL fornece o valor de um registrador multiplicado por uma potência de dois,  inserindo zeros nas posições de bit vagas. 	|
+|        `BIC`       	|       A instrução BIC (BIT Clear) realiza uma operação  AND nos bits em Rn(Operando 1) com os complementos dos bits correspondentes no valor de Operando 2.       	|
+|         `B`        	|                                                      A instrução B causa um desvio para uma parte do código.                                                      	|
+|        `BL`        	|                             A instrução BL copia o endereço da próxima instrução em r14 (LR) e faz o desvio para uma parte do código.                             	|
+|        `BX`        	|                                                   A instrução BX causa um desvio para o endereço mantido em Rm.                                                   	|
+|     `.include`     	|                                                                Inclui arquivos externos ao código.                                                                	|
+|       `.equ`       	|                                                                     Define um valor constante.                                                                    	|
+| `.macro` e `.endm` 	|                                     Cria uma rotina com um trecho de código que pode ser chamada em qualquer parte do programa                                    	|
+|        `LSR`       	|    Faz um deslocamento lógico à direita. O LSL fornece o valor de um registrador dividido por uma potência de dois,  inserindo zeros nas posições de bit vagas.   	|
+|       `.data`      	|                                                              Define uma seção de dados para o código.                                                             	|
+|       `.word`      	|                                                              Define uma palavra de dados de 4 bytes.                                                              	|
+|      `.asciz`      	|                                                              Define uma string seguida por 1 byte 0.                                                              	|
+
+Em algumas das instruções acima(ADD,B,BL,SUB e MOV) foram utilizadas condições de execução. Segue abaixo a lista das que foram usadas:
+- `EQ` - Compara se é igual.
+- `LT` - Compara se é menor que.
+
 <a id="secao5"></a>
 
 ## Testes realizados 
