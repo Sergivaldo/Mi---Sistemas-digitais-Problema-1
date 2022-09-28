@@ -159,7 +159,7 @@ Abaixo algumas imagens e vídeos dos dos estados descritos anteriormente:
 
 ##### Contando e pausando.
 
-[pausando] (https://user-images.githubusercontent.com/72475500/192685506-5911db25-e587-4db3-bbed-676197df7a25.mp4)
+[pausando](https://user-images.githubusercontent.com/72475500/192685506-5911db25-e587-4db3-bbed-676197df7a25.mp4)
 
 ##### Contando e reiniciando.
 [reiniciando](https://user-images.githubusercontent.com/72475500/192685818-d47a0078-0a06-4966-996b-5034e624ba93.mp4)
