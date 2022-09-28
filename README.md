@@ -12,7 +12,9 @@ de botões, como:
 - Iniciar contagem;
 - Pausar contagem;
 - Reiniciar contagem para o tempo inicial definido.
-
+### Membros do grupo
+  **Jacob Santana**<br>
+  **Sergivaldo Junior**
 ## Seções 
 
 &nbsp;&nbsp;&nbsp;[**1.** Softwares utilizados](#secao1)
