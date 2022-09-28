@@ -96,6 +96,16 @@ Para o desenvolvimento da aplicação foram utilizadas de diversas instruções 
 
 Abaixo segue a tabela com as instruções que foram utilizadas no código assembly do programa:
 
+| Instrução 	|                                                 Descrição                                                	|
+|:---------:	|:--------------------------------------------------------------------------------------------------------:	|
+|   `MOV`   	| Move o valor do operando para o registrador destino. Podendo ser um valor imediato ou de um registrador. 	|
+|   `ADD`   	|                Soma o valor dos operandos e armazena o resultado  no registrador destino.                	|
+|   `SUB`   	|    Subtrai do primeiro operando o valor do operando 2 e  armazena o resultado no registrador destino.    	|
+|   `AND`   	|       Faz uma operação and bit a bit nos operandos e  armazena o resultado no registrador destino.       	|
+|   `ORR`   	|        Faz uma operação or bit a bit nos operandos e  armazena o resultado no registrador destino.       	|
+|   `CMP`   	|                    Compara o valor no registrador do primeiro operando  com Operando2                    	|
+|   `LDR`   	|                                Carrega dados da memória em um registrador                                	|
+|   `STR`   	|                               Armazena o dado de um registrador na memória                               	|
 <a id="secao5"></a>
 
 ## Testes realizados 
