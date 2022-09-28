@@ -183,7 +183,7 @@ Com o uso de interrupções esse problema pode ser resolvido, fazendo com que o 
 A verificação do sinal dos botões é feita com o registrador de nível dos pinos GPIO, então se o valor do bit responsável pelo botão no registrador é 0 (o botão manda nivel baixo ao ser pressionado) e então o programa é mudado para outro estado (contando, pausado ou inicio). O problema acontece quando o botão é mantido pressionado, como o nível do botão atende a condição de verificação a mudança de estado ocorre sem parar. Por exemplo, se o temporizador está contando e o botão de pause é pressionado e mantido esses dois estados ficarão sempre alternando. O vídeo abaixo mostra essa situação acontecendo:
 
 
-<VÍDEO AQUI>
+[bug pause](https://user-images.githubusercontent.com/72475500/192683089-96ba574b-f107-4091-a567-47aa2810dc4b.mp4)
 
 
 <a id="secao7"></a>
