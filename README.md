@@ -153,11 +153,16 @@ Independente do sistema estar pausado ou contando, quando pressionado o botão d
 
 Abaixo algumas imagens e vídeos dos dos estados descritos anteriormente:
 
+##### Contando de 0 a 9 e reiniciando ao zerar.
 
+[contando 0 a 9](https://user-images.githubusercontent.com/72475500/192684509-d474fa05-2ce9-4fc3-8ba8-44cf737c61dc.mp4)
 
-<IMAGENS E VÍDEOS AQUI>
+##### Contando e pausando.
 
+[pausando] (https://user-images.githubusercontent.com/72475500/192685506-5911db25-e587-4db3-bbed-676197df7a25.mp4)
 
+##### Contando e reiniciando.
+[reiniciando](https://user-images.githubusercontent.com/72475500/192685818-d47a0078-0a06-4966-996b-5034e624ba93.mp4)
 
 <a id="secao6"></a>
 ## Limitações da solução desenvolvida
