@@ -121,6 +121,7 @@ Abaixo segue a tabela com as instruções que foram utilizadas no código assemb
 |       `.data`      	|                                                              Define uma seção de dados para o código.                                                             	|
 |       `.word`      	|                                                              Define uma palavra de dados de 4 bytes.                                                              	|
 |      `.asciz`      	|                                                              Define uma string seguida por 1 byte 0.                                                              	|
+|      `.ltorg`      	|                                                              Usado em rotinas muito grandes para fazer com que o offset de instruções como LDR fique dentro do seu intervalo (+/- 4095).|
 
 Em algumas das instruções acima(ADD,B,BL,SUB e MOV) foram utilizadas condições de execução. Segue abaixo a lista das que foram usadas:
 - `EQ` - Compara se é igual.
